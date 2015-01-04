@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<?
+include "php/functions.inc";
+?>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
-
+<?php
+$newsArray = getNewsArray ( "party/", $_REQUEST ["seqId"] );
+include "Header.html";
+?>
+<div class="content" id="content">
+	<h1><?php echo $newsArray["title"];?></h1>
+	<h2><?php echo $newsArray["time"];?></h2>
+	<div class="post"><?php echo $newsArray["content"];?></div>
+	<div style="height: 60px;">&nbsp;</div>
+</div>
+<?php
+include "Footer.html";
+?>
 </body>
 </html>

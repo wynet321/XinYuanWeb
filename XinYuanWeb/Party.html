@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<?
+include "php/functions.inc";
+?>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
-
+<?php
+include "Header.html";
+?>
+<div class="content" id="content">
+	<h1>聚会列表</h1>
+	<div class="post">
+	<?php
+	for($i = 1; $i < 21; $i ++) {
+		$newsArray = getNewsArray ( "party/", $i );
+		$time = $newsArray ["time"];
+		$title = $newsArray ["title"];
+		echo "<div style='padding: 10px 0px 5px 10px;'><a href=\"/partydetails.html?seqId=" . $i . "\" title=\"" . $title . "\">" . $time . "&nbsp;-&nbsp;" . $title . "</a></div>";
+	}
+	?>
+	</div>
+	<div style="height: 60px;">&nbsp;</div>
+</div>
+<?php
+include "Footer.html";
+?>
 </body>
 </html>

@@ -1,0 +1,8 @@
+2012/10/1
+dennis wang
+[Notes]
+KitType=1
+Directory=c:\notes\data
+MailServer=d23ml028
+MailFile=mail6\wangyi.nsf
+Location=Online,9F6,CN=Yi Wang/OU=China/O=IBM
